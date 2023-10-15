@@ -1,0 +1,40 @@
+﻿@page "/"
+@model LoginPageModel
+
+<h1>
+    Login Page
+</h1>
+<form method="post">
+    <table>
+        <tr>
+            <td>
+                Email:
+            </td>
+            <td>
+                <input asp-for="customer.Email" />
+            </td>
+            <td>
+                <span asp-validation-for="customer.Email" class="text-danger" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <input asp-for="customer.Password" />
+            </td>
+            <td>
+                <span asp-validation-for="customer.Password" class="text-danger" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Sign In"/>
+            </td>
+        </tr>
+    </table>
+</form>
+<h3>
+    @ViewData["Warning"]
+</h3>

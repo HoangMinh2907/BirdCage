@@ -1,0 +1,58 @@
+﻿@page
+@model FUCarRentingSystem.Pages.Admin.CustomerPage.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="customerCreate.CustomerName" class="control-label"></label>
+                <input asp-for="customerCreate.CustomerName" class="form-control" />
+                <span asp-validation-for="customerCreate.CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customerCreate.Telephone" class="control-label"></label>
+                <input asp-for="customerCreate.Telephone" class="form-control" />
+                <span asp-validation-for="customerCreate.Telephone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customerCreate.Email" class="control-label"></label>
+                <input asp-for="customerCreate.Email" class="form-control" />
+                <span asp-validation-for="customerCreate.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customerCreate.CustomerBirthday" class="control-label"></label>
+                <input asp-for="customerCreate.CustomerBirthday" class="form-control" />
+                <span asp-validation-for="customerCreate.CustomerBirthday" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="customerCreate.Password" class="control-label"></label>
+                <input asp-for="customerCreate.Password" class="form-control" />
+                <span asp-validation-for="customerCreate.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+        <h3>
+            @ViewData["Warning"]
+        </h3>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

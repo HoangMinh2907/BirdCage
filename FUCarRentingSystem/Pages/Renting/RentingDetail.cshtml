@@ -1,0 +1,56 @@
+﻿@page
+@model FUCarRentingSystem.Pages.Renting.RentingDetailModel
+
+@{
+    ViewData["Title"] = "RentingDetail";
+}
+
+<h1>RentingDetail</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RentingDetail[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentingDetail[0].EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentingDetail[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentingDetail[0].Car)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentingDetail[0].RentingTransaction)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.RentingDetail)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car.CarName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RentingTransaction.RentingTransationId)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Name: @Model.Transaction.Customer.CustomerName</h3>
+<h3>Date: @Model.Transaction.RentingDate</h3>
+<h3>Price: @Model.Transaction.TotalPrice</h3>
